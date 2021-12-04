@@ -1,0 +1,7 @@
+{
+  "name": "patthai",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
