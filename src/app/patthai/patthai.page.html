@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>สั่งจอง</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides>
+    <ion-slide>
+      <img class="img" src="https://img.wongnai.com/p/1968x0/2018/12/15/bb08773d48034780ab503b1a4902a6f8.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img class="img" src="https://cdn.pixabay.com/photo/2019/03/04/12/59/pad-thai-4034040_960_720.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img class="img" src="https://cdn.pixabay.com/photo/2019/08/16/09/31/pad-thai-4409871_960_720.jpg" alt="">
+    </ion-slide>
+  </ion-slides>
+
+  <ion-card>
+    <div class="ion-margin">
+      <h1>หอยทอด</h1>ผัดด้วยไฟแรงกับไข่ ใบกุยช่ายสับ ถั่วงอก หัวไชโป๊สับ เต้าหู้เหลือง ถั่วลิสงคั่ว และกุ้งแห้ง
+      ปรุงรสด้วยพริก น้ำปลา และน้ำตาล เสิร์ฟพร้อมกับมะนาว ใบกุยช่าย ถั่วงอกสด และหัวปลีเป็นเครื่องเคียง
+    </div>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-title>
+      ผัดไทย
+    </ion-card-title>
+    <ion-card-content>
+      <ion-item>
+        Rating<ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+      </ion-item>
+
+      <ion-item class="mplice" lines="none">
+        <h2 class="pice">40 ฿</h2>
+        <ion-buttons>
+          <ion-icon name="add-circle" style="font-size: 30px;"></ion-icon>
+        </ion-buttons>
+        <h2>0</h2>
+        <ion-buttons>
+          <ion-icon name="remove-circle" style="font-size: 30px;"></ion-icon>
+        </ion-buttons>
+      </ion-item>
+
+      <ion-item>
+        <ion-button class="btn-book" shape="round" color="success">สั่งจอง</ion-button>
+        <ion-button class="btn-book" shape="round" color="danger" routerLink="/home">ยกเลิก</ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

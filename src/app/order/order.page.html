@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start" class="back-btn">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>สั่งจอง</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides [options]="{autoplay:true}">
+    <ion-slide>
+      <img class="img" src="https://img.wongnai.com/p/1968x0/2018/12/15/bb08773d48034780ab503b1a4902a6f8.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img class="img" src="https://cdn.pixabay.com/photo/2019/03/04/12/59/pad-thai-4034040_960_720.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img class="img" src="https://cdn.pixabay.com/photo/2019/08/16/09/31/pad-thai-4409871_960_720.jpg" alt="">
+    </ion-slide>
+  </ion-slides>
+  <div class="ion-margin">
+    <h1>ผัดไทยหอยทอด ร้านป้าเมือง</h1>ผัดด้วยไฟแรงกับไข่ ใบกุยช่ายสับ ถั่วงอก หัวไชโป๊สับ เต้าหู้เหลือง ถั่วลิสงคั่ว
+    และกุ้งแห้ง
+    ปรุงรสด้วยพริก น้ำปลา และน้ำตาล 
+  </div>
+
+  <ion-card>
+    <ion-card-title>
+      จอง
+    </ion-card-title>
+    <ion-item>
+      <ion-label>ชื่อผู้สั่ง</ion-label>
+      <ion-input [(ngModel)]="ordername"></ion-input>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">ผัดไทย</ion-col>
+        <ion-col size="2">
+          <ion-buttons (click)="minuspatthai()">
+            <ion-button>
+              <ion-icon name="remove-circle-outline" ></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col size="5">{{patthai}}</ion-col>
+        <ion-col size="2">
+          <ion-buttons (click)="addpatthai()">
+            <ion-button>
+              <ion-icon name="add-circle-outline" ></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col  size="3">หอยทอด</ion-col>
+        <ion-col  size="2">
+          <ion-buttons>
+            <ion-button>
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col  size="5">{{hoythord}}</ion-col>
+        <ion-col  size="2">
+          <ion-buttons>
+            <ion-button>
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row> 
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" shape="round" color="danger" (click)="cancel()">ยกเลิก</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="full" shape="round" color="success" (click)="order()">ยืนยัน</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-card>
+</ion-content>

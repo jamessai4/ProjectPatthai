@@ -1,0 +1,46 @@
+#container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  ion-card {
+    text-align: center;
+    border-radius: 30px;
+    --background: #dfdac5;
+  }
+  
+  .ntext {
+    margin-left: 20px;
+  }
+  
+  ion-content {
+    --ion-background-color: #FAF6E0;
+  }
+  ion-header {
+    --ion-background-color: #FAF6E0;
+  }
+  
+
+
+  .header {
+    font-size: 50px;
+    font-family: 'Charmonman', cursive;
+    color: rgb(185, 137, 14);
+    margin-top: 70px;
+    background-color:#FAF6E0 ;
+  }
+  
+  h1 {
+    color: rgb(172, 128, 17);
+    font-family: 'Charmonman', cursive;
+  }
+  
+  ion-button{
+    font-family: 'Charmonman', cursive;
+    font-size: 25px;
+    --background: #dfdac5;
+    color: rgb(172, 128, 17);
+  }

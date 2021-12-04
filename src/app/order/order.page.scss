@@ -1,0 +1,32 @@
+ion-title {
+    color: rgb(172, 128, 17);
+    font-family: 'Charmonman', cursive;
+    
+  }
+  ion-header{
+      --background:#faf5dc;
+  }
+  
+  ion-col{
+      text-align: center;
+  }
+  
+  ion-title{
+      font-size: 30px;
+      text-align: center;
+  }
+  
+  .back-btn{
+    width: 10px;  
+  }
+
+  ion-content {
+    --ion-background-color: #fbf9ed;
+  }
+
+  ion-card {
+    text-align: center;
+    border-radius: 30px;
+    --background: #faf5dc;
+  }
+  
