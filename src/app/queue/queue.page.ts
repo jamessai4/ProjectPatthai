@@ -1,5 +1,6 @@
 import { Component, OnInit, NgModule, Input } from '@angular/core';
 
+
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 
@@ -13,7 +14,7 @@ import { AlertController } from '@ionic/angular';
 export class QueuePage implements OnInit {
 
   itemCollection: AngularFirestoreCollection<any>;
-  items: Observable<any>;
+  items: any;
 
 
 

@@ -1,9 +1,47 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>managequeue</ion-title>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start" class="back-btn">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>จัดการคิว</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <ion-card style="margin-top: 50%;" id="tutorial">
+    <ion-item>
+      <ion-label>P@ssword1</ion-label>
+      <ion-input ></ion-input>
+    </ion-item>
+    
+      <ion-button expand="full" shape="round" color="danger" (click)="test()">ยกเลิก</ion-button>
+       <ion-button expand="full" shape="round" color="success" (click)="ok()">ตกลง</ion-button>
+    
+  </ion-card>
+ 
+
+
+  <ion-card *ngFor="let item of items|async" id="queue" hidden>
+
+    <ion-card-header>
+      <ion-card-title>
+        <ion-row>
+          <ion-col>
+            <ion-buttons color="danger" (click)="remove(item.id)">
+              <ion-button>
+                <ion-icon name="close-circle"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+      </ion-card-title>
+
+      <ion-card-title>คิวที่ {{item.token}}</ion-card-title>
+      <ion-card-title>คุณ : {{item.name}}</ion-card-title>
+      <ion-card-title>ผัดไท :{{item.patthai}}</ion-card-title>
+      <ion-card-title>หอยทอด :{{item.hoythord}}</ion-card-title>
+      <ion-card-title>สถานะ :{{item.status}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
