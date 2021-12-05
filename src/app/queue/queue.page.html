@@ -26,17 +26,17 @@
   <ion-card *ngFor="let item of items|async">
 
     <ion-card-header>
-      <ion-card-title>
+      <!-- <ion-card-title>
         <ion-row>
-          <ion-col>
+          <ion-col>            
             <ion-buttons color="danger" (click)="remove(item.id)">
               <ion-button>
                 <ion-icon name="close-circle"></ion-icon>
               </ion-button>
-            </ion-buttons>
+            </ion-buttons>            
           </ion-col>
         </ion-row>
-      </ion-card-title>
+      </ion-card-title> -->
 
       <ion-card-title>คิวที่ {{item.token}}</ion-card-title>
       <ion-card-title>คุณ : {{item.name}}</ion-card-title>
