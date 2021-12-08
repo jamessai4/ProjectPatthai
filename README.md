@@ -1,0 +1,7 @@
+# ProjectPatthai @PSC
+# plz do this on first time
+- npm install
+- npm install firebase
+- npm i @angular/fire
+# And
+- password Manage is "1234"
