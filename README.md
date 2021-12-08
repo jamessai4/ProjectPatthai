@@ -1,4 +1,4 @@
-# ProjectPatthai @PSC ทำก็ทำให้แล้วนะ ช่วยอ่านแล้วทำตามด้วย
+# ProjectPatthai @PSC
 # plz do this on first time
 - npm install
 - npm install firebase
