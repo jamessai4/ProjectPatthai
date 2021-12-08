@@ -8,22 +8,18 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-card style="margin-top: 50%;" id="tutorial">
-    <ion-item>
-      <ion-label>P@ssword1</ion-label>
-      <ion-input ></ion-input>
+  <ion-card style="margin-top: 50%;" id="tutorial" id="passinput">
+    <ion-item style="margin-bottom: 10px;">
+      <ion-label>กรอกหรัสผ่าน</ion-label>
+      <ion-input [(ngModel)]="pass" type="password"></ion-input>
     </ion-item>
-    
-      <ion-button expand="full" shape="round" color="danger" (click)="test()">ยกเลิก</ion-button>
-       <ion-button expand="full" shape="round" color="success" (click)="ok()">ตกลง</ion-button>
-    
+    <ion-button style="margin-bottom: 10px;" expand="full" shape="round" color="danger" (click)="back()">ยกเลิก</ion-button>
+    <ion-button style="margin-bottom: 10px;" expand="full" shape="round" color="success" (click)="ok()">ตกลง</ion-button>
   </ion-card>
- 
 
 
-  <ion-card *ngFor="let item of items|async" id="queue" >
-
+<div id="queue" hidden=true>
+  <ion-card *ngFor="let item of items|async"  >
     <ion-card-header>
       <ion-card-title>
         <ion-row>
@@ -36,12 +32,12 @@
           </ion-col>
         </ion-row>
       </ion-card-title>
-
       <ion-card-title>คิวที่ {{item.token}}</ion-card-title>
       <ion-card-title>คุณ : {{item.name}}</ion-card-title>
       <ion-card-title>ผัดไท :{{item.patthai}}</ion-card-title>
       <ion-card-title>หอยทอด :{{item.hoythord}}</ion-card-title>
-      <ion-card-title>สถานะ :{{item.status}}</ion-card-title>
     </ion-card-header>
   </ion-card>
+</div>
+  
 </ion-content>

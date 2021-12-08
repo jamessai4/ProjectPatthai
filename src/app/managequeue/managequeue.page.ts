@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { NavController } from '@ionic/angular';
 import { Observable } from 'rxjs';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-managequeue',
@@ -15,31 +17,53 @@ export class ManagequeuePage implements OnInit {
 
 
 
-  constructor(private firestore: AngularFirestore) {
+  constructor(
+    private firestore: AngularFirestore,
+    private nav:NavController,
+    public alertController: AlertController
+    ) {
     this.itemCollection = firestore.collection<any>('patthai', ref => ref.orderBy('token'));
     this.items = this.itemCollection.valueChanges();
   }
 
   ngOnInit() {
-
+    
   }
 
-  pass="1234";
+  check="1234"
+  pass:string;
   password:string;
   hide: boolean = true;
 
-  ok() {
-    if (this.hide === true ) {
-      this.hide = false;
-      document.getElementById("queue").hidden = true;
-    } else if (this.hide === false) {
-
-      this.hide = true;
+  async ok() {
+    console.log("check")
+    if (this.pass === this.check) {
+      console.log("nice1")
       document.getElementById("queue").hidden = false;
+      document.getElementById("passinput").hidden = true;
+    }else{
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        message: 'กรูณากรอกรหัสผ่านให้ถูกต้อง',
+        buttons: ['OK'],
+      });
+  
+      await alert.present();
+  
+      const { role } = await alert.onDidDismiss();
+      console.log('onDidDismiss resolved with role', role);
     }
+    // if (this.pass === this.check ) {
+    //   document.getElementById("queue").hidden = false;
+    // } else {
+
+    //   this.hide = true;
+    //   document.getElementById("queue").hidden = true;
+    // }
   }
 
-  test(){
+  back(){
+    this.nav.navigateRoot('/home')
   }
 
 
