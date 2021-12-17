@@ -1,7 +1,8 @@
+import { tokenName } from '@angular/compiler';
+import { TokenService } from './../token.service';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { AlertController, NavController } from '@ionic/angular';
-
 
 @Component({
   selector: 'app-order',
@@ -15,7 +16,8 @@ export class OrderPage implements OnInit {
   constructor(
     private nav: NavController,
     private firestore: AngularFirestore,
-    public alertController: AlertController
+    public alertController: AlertController,
+    private tok: TokenService
   ) {
     this.worksCollection = firestore.collection<any>('patthai')
   }
@@ -24,11 +26,13 @@ export class OrderPage implements OnInit {
   patthai: number;
   hoythord: number;
   ordername: string;
-  token = 1;
+  
+  
 
   ngOnInit() {
     this.patthai = 0;
     this.hoythord = 0;
+    console.log(this.tok.token)
   }
 
   minuspatthai() {
@@ -68,33 +72,21 @@ export class OrderPage implements OnInit {
         name: this.ordername,
         hoythord: this.hoythord,
         patthai: this.patthai,
-        token: this.token
+        token: this.tok.token
       }
       this.worksCollection.doc(id).set(orders)
         .then(() => {
-          this.token = this.token + 1;
+          this.tok.token = this.tok.token + 1
           this.patthai = 0;
           this.hoythord = 0;
           this.ordername = "";
 
-          this.nav.navigateBack("/queue");
+          // this.nav.navigateBack("/queue");
         })
-    } else {
-      console.log("fali")
-      // const alert = await this.alertController.create({
-      //   cssClass: 'my-custom-class',
-      //   header: 'Alert',
-      //   subHeader: 'Subtitle',
-      //   message: 'This is an alert message.',
-      //   buttons: ['OK'],
-      // });
-  
-      // await alert.present();
-  
-      // const { role } = await alert.onDidDismiss();
-      // console.log('onDidDismiss resolved with role', role);
-
     }
-  }
 
+
+  }
 }
+
+
