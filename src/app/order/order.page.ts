@@ -22,7 +22,7 @@ export class OrderPage implements OnInit {
     this.worksCollection = firestore.collection<any>('patthai')
   }
 
-  status = "กำลังทำ"
+ 
   patthai: number;
   hoythord: number;
   ordername: string;
@@ -63,6 +63,7 @@ export class OrderPage implements OnInit {
   }
 
   async order() {
+
     if (this.ordername !== "") {
       console.log("complete")
       const id = this.firestore.createId();
