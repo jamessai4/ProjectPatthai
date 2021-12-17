@@ -4,6 +4,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 import { NavController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { AlertController } from '@ionic/angular';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-managequeue',
@@ -20,14 +21,15 @@ export class ManagequeuePage implements OnInit {
   constructor(
     private firestore: AngularFirestore,
     private nav:NavController,
-    public alertController: AlertController
+    public alertController: AlertController,
+    private tok:TokenService
     ) {
     this.itemCollection = firestore.collection<any>('patthai', ref => ref.orderBy('token'));
     this.items = this.itemCollection.valueChanges();
   }
 
   ngOnInit() {
-    
+    console.log(this.token,this.tok.token)
   }
 
   check="1234"
@@ -67,9 +69,13 @@ export class ManagequeuePage implements OnInit {
   }
 
 
+ token = this.tok.token
 
   remove(id: string) {
-    this.itemCollection.doc(id).delete()
+    console.log(this.token,)
+    this.itemCollection.doc(id).delete();
+
   }
 
+  
 }

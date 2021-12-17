@@ -1,5 +1,5 @@
 import { tokenName } from '@angular/compiler';
-import { TokenService } from './../token.service';
+import { TokenService } from '../token.service';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { AlertController, NavController } from '@ionic/angular';
@@ -17,7 +17,7 @@ export class OrderPage implements OnInit {
     private nav: NavController,
     private firestore: AngularFirestore,
     public alertController: AlertController,
-    private tok: TokenService
+    private tok:TokenService
   ) {
     this.worksCollection = firestore.collection<any>('patthai')
   }
@@ -32,7 +32,6 @@ export class OrderPage implements OnInit {
   ngOnInit() {
     this.patthai = 0;
     this.hoythord = 0;
-    console.log(this.tok.token)
   }
 
   minuspatthai() {
@@ -73,9 +72,12 @@ export class OrderPage implements OnInit {
         hoythord: this.hoythord,
         patthai: this.patthai,
         token: this.tok.token
+        
+        
       }
       this.worksCollection.doc(id).set(orders)
         .then(() => {
+          console.log(this.tok.token)
           this.tok.token = this.tok.token + 1
           this.patthai = 0;
           this.hoythord = 0;
